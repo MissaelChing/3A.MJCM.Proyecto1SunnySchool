@@ -1,0 +1,59 @@
+﻿@page
+@model SunnySchoolUI.Pages.FormularioBecaModel
+@{
+    ViewData["Title"] = "FormularioBeca";
+}
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="title">Solicitud de beca</h1>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Nombre del Alumno</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Curp</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Nacionalidad</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Fecha de nacimiento</label>
+                    <input type="date" class="form-control">
+                </div>
+            </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>H</label>
+                        <input name="only-one" id="only-one" type="checkbox" class="form-control" onclick="uncheck()">
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>M</label>
+                        <input name="only-two" id="only-two" type="checkbox" class="form-control" onclick="uncheck()">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <a asp-page="FormularioBeca" class="btn btn-info btn-block">Enviar Solicitud</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="~/js/JavaScript.js"></script>
