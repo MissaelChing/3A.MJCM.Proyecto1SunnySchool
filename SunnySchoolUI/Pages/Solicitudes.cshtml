@@ -1,0 +1,82 @@
+﻿@page
+@model SunnySchoolUI.Pages.TutorModel
+@{
+    ViewData["Title"] = "Solicitudes";
+}
+
+<h1>Solicitudes</h1>
+@if (Model.Solicitud.Any())
+{
+
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(x => x.Solicitud.FirstOrDefault().Id)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Solicitud.FirstOrDefault().Nombrealumno)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Solicitud.FirstOrDefault().Curp)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Solicitud.FirstOrDefault().FechaNacimiento)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Solicitud.FirstOrDefault().Genero)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Solicitud.FirstOrDefault().Localidad)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Solicitud.FirstOrDefault().Municipio)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Solicitud.FirstOrDefault().Colonia)</th>
+                <th scope="col">Status</th>
+                <th scope="col">Seguimiento</th>
+                <th scope="col">Eliminar</th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Solicitud)
+            {
+
+            <tr>
+                <td scope="row">@Html.DisplayFor(m => item.Id)</td>
+                <td>@Html.DisplayFor(m => item.Nombrealumno)</td>
+                <td>@Html.DisplayFor(m => item.Curp)</td>
+                <th>@Html.DisplayFor(m => item.FechaNacimiento)</th>
+                <th>@Html.DisplayFor(m => item.Genero)</th>
+                <th>@Html.DisplayFor(m => item.Localidad)</th>
+                <th>@Html.DisplayFor(m => item.Municipio)</th>
+                <th>@Html.DisplayFor(m => item.Colonia)</th>
+                <th>@Html.DisplayFor(m => item.StatusS)</th>
+
+                <td>
+                    <a asp-page="/Detalles" asp-route-ID="@item.Id" class="btn btn-success">Visualizar</a>
+                </td>
+                <td>
+                    <button type="submit" asp-route-ID="@item.Id" class="btn btn-danger">Eliminar</button>
+                </td>
+
+            </tr>
+            }
+        </tbody>
+
+    </table>
+}
+else
+{
+    <div class="mx-auto text-center">
+        <span class="text-danger">No se encontraron solicitudes de beca</span>
+    </div>
+}
+@section Scripts{
+    <script>
+        function setstatus(Id, value) {
+            console.log(Id);
+            console.log(value);
+            return;
+            $.ajax({
+                url: "OnPost",
+                type: "GET",
+                dataType: "json",
+                data: { Id: Id, status: value },
+                success: function (res) {
+                    console.log(res);
+                }
+            });
+        }
+    </script>
+}
+
