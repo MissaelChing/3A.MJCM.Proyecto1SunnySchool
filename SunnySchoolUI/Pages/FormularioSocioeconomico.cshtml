@@ -1,0 +1,177 @@
+﻿@page
+@model SunnySchoolUI.Pages.FormularioSocioeconomicoModel
+@{
+    ViewData["Title"] = "FormularioSocioeconomico";
+}
+
+<form class="mt-3" method="post">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Formulario Socioeconomico</h1>
+            </div>
+            <br>
+            <br>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" asp-for="@Model.Socieconomico.Nombre" class="form-control">
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="col-md-12">
+                <h3>Ingresos</h3>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Ingreso Mensual</label>
+                    <input type="number" asp-for="@Model.Socieconomico.IngresosM" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Egreso Mensual</label>
+                    <input type="number" asp-for="@Model.Socieconomico.EgresosM" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Alimentacion</label>
+                    <input type="number" asp-for="@Model.Socieconomico.Alimentacion" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Escolaridad</label>
+                    <input type="number" asp-for="@Model.Socieconomico.Escolaridad" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Vivienda</label>
+                    <input type="number" class="form-control" asp-for="@Model.Socieconomico.Vivienda">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Transporte</label>
+                    <input type="number" class="form-control" asp-for="@Model.Socieconomico.Transporte">
+                </div>
+            </div>
+            <div class=" col-md-12">
+                <div class="form-group">
+                    <label>Servicios</label>
+                    <input type="number" class="form-control" asp-for="@Model.Socieconomico.Servicios">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Otros</label>
+                    <input type="number" class="form-control" asp-for="@Model.Socieconomico.Otros">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Total</label>
+                    <input type="number" class="form-control" asp-for="@Model.Socieconomico.Total">
+                </div>
+            </div>
+            
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="col-md-12">
+            <h3>Vivienda</h3>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Distribucion (Cuartos en la casa)</label>
+                    <input type="number" class="form-control" asp-for="@Model.Socieconomico.Distribucion">
+                </div>
+
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Area</label>
+                    <select class="form-control" asp-for="@Model.Socieconomico.Area">
+                        <option value="" disabled="" selected="">Selecciona el area</option>
+                        <option value="Comunidad indigena">Comunidad indigena</option>
+                        <option value="Marginacion">Marginacion</option>
+                        <option value="Rural">Rural</option>
+                        <option value="Suburbana">Suburbana</option>
+                        <option value="Urbana">Urbana</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Servicios</label>
+                    <input type="text" class="form-control" asp-for="@Model.Socieconomico.ServiciosV">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Construccion</label>
+                    <select class="form-control" asp-for="@Model.Socieconomico.Construccion">
+                        <option value="" disabled="" selected="">Selecciona el area</option>
+                        <option value="adobe">adobe</option>
+                        <option value="ladrillo">ladrillo</option>
+                        <option value="block">block</option>
+                        <option value="carrizo">carrizo</option>
+                        <option value="cemento">cemento</option>
+                        <option value="concreto">concreto</option>
+                        <option value="lamina de asbesto">lamina de asbesto</option>
+                        <option value="lamina de carton">lamina de carton</option>
+                        <option value="madera">madera</option>
+                        <option value="mixta">mixta</option>
+                        <option value="palma">palma</option>
+                        <option value="piedra">piedra</option>
+                        <option value="tabique">tabique</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Status de la vivienda </label>
+                    <select class="form-control" asp-for="@Model.Socieconomico.StatusV">
+                        <option value="" disabled="" selected="">Selecciona el status de la vivienda</option>
+                        <option value="Propia">Propia</option>
+                        <option value="Rentada">Rentada</option>
+                        <option value="Prestada">Prestada</option>
+                        <option value="Invasion">Invasion</option>
+                        <option value="Comprada">Comprada</option>
+                        <option value="No tiene">No tiene</option>
+                        <option value="Compartida">Compartida</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Mobiliario</label>
+                    <input type="text" class="form-control" asp-for="@Model.Socieconomico.Mobiliario">
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Observaciones</label>
+                    <input type="text" class="form-control" asp-for="@Model.Socieconomico.Observaciones">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <button class="btn btn-info btn-block" type="submit">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
