@@ -1,0 +1,49 @@
+﻿@page
+@model SunnySchoolUI.Pages.AgendaModel
+@{
+    Layout = "Layout";
+    ViewData["Title"] = "Agenda";
+}
+
+<h1>Agenda</h1>
+<form method="post">
+    @if (Model.Solicitud.Any())
+    {
+
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(x => x.Solicitud.FirstOrDefault().Id)</th>
+                    <th scope="col">@Html.DisplayNameFor(x => x.Solicitud.FirstOrDefault().Nombre)</th>
+                    <th scope="col">La visita se agendo para el dia</th>
+
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Solicitud)
+                {
+
+                    <tr>
+                        <td scope="row">@Html.DisplayFor(m => item.Id)</td>
+                        <td>@Html.DisplayFor(m => item.Nombre)</td>
+                        <td>@Html.DisplayFor(m => item.Agenda)</td>
+
+
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    }
+    else
+    {
+        <div class="mx-auto text-center">
+            <span class="text-danger">No se encontraron solicitudes Socioeconomicas</span>
+        </div>
+    }
+
+
+</form>
+
