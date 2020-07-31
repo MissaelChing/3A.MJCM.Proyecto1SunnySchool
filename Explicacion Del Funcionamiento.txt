@@ -1,0 +1,14 @@
+Mi aplicacion web cuenta con dos tipo de sesion tutor y evaluador
+el tutor puede solicitar una beca para el alumno por lo cual al rellenar la solicitud de beca el sistema registra un alumno a la par de la solicitud
+
+tambien al iniciar como evaluador podemos ver dos apartados uno llamado solicitudes donde el evaluador puede visualizar la solicitud o eliminarla
+
+al darle click en visualizar el evaluador puede editar la solicitud poniendo en el apartado estatus de la solicitud como revisada o rechazada 
+
+si le pone revisada entonces el sistema envia un correo notificando dicho suceso donde tambien se le indica que puede continuar con el proceso de registro socioeconomico,
+en caso contrario si la solicitud ess rachazada por algun dato entonces se le notificara al solicitante sin decirle que siga con el proceso
+
+El valuador una vez el solicitante haya pasado el proceso socioeconomico tendra derecho a visualizar toda la informacion socioeconomica de los solicitantes una vez el evaluador haya revisado puede agendar una cita en el ultimo apartado agenda entonces se actualiza el registro.
+
+El tutor podra revisar la agenda en el apartado agenda donde visualizara cuando le toco la visita de dicho evaluador al alumno 
+
